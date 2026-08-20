@@ -2,23 +2,49 @@ name: Build TTS Tool
 
 on:
   workflow_dispatch:
+    inputs:
+      platform:
+        description: "Which platform(s) to build"
+        type: choice
+        default: all
+        options:
+          - all
+          - linux
+          - macos
+          - windows
   push:
     tags:
       - "v*"
 
 jobs:
+  matrix-prep:
+    runs-on: ubuntu-latest
+    outputs:
+      include: ${{ steps.set.outputs.include }}
+    steps:
+      - id: set
+        run: |
+          case "${{ github.event.inputs.platform || 'all' }}" in
+            linux)
+              echo 'include=[{"platform":"ubuntu-22.04","args":""}]' >> "$GITHUB_OUTPUT"
+              ;;
+            macos)
+              echo 'include=[{"platform":"macos-latest","args":""}]' >> "$GITHUB_OUTPUT"
+              ;;
+            windows)
+              echo 'include=[{"platform":"windows-latest","args":""}]' >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo 'include=[{"platform":"macos-latest","args":""},{"platform":"ubuntu-22.04","args":""},{"platform":"windows-latest","args":""}]' >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
   build:
+    needs: matrix-prep
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - platform: macos-latest
-            args: ""
-          - platform: ubuntu-22.04
-            args: ""
-          - platform: windows-latest
-            args: ""
-
+        include: ${{ fromJson(needs.matrix-prep.outputs.include) }}
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v4
