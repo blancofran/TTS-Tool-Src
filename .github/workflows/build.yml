@@ -41,6 +41,8 @@ jobs:
 
   build:
     needs: matrix-prep
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -75,22 +77,14 @@ jobs:
         if: matrix.platform != 'windows-latest'
         run: ./scripts/download-models.sh small
 
-      - name: Build app
+      - name: Build app and publish to GitHub Release
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          tagName: v__VERSION__
+          releaseName: "TTS Tool v__VERSION__"
+          releaseBody: "See the assets below to download and install this version."
+          releaseDraft: true
+          prerelease: false
           args: ${{ matrix.args }}
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: tts-tool-${{ matrix.platform }}
-          path: |
-            src-tauri/target/release/bundle/**/*.dmg
-            src-tauri/target/release/bundle/**/*.app
-            src-tauri/target/release/bundle/**/*.msi
-            src-tauri/target/release/bundle/**/*.exe
-            src-tauri/target/release/bundle/**/*.AppImage
-            src-tauri/target/release/bundle/**/*.deb
-            src-tauri/target/release/bundle/**/*.rpm

@@ -14,6 +14,22 @@ no internet required for the core flow.
 - **On-demand model**: `ggml-medium-q5_0.bin` (~539MB), downloaded into the
   app data dir the first time "Precisión alta" is used.
 
+## Downloads
+
+Prebuilt installers are published as draft [GitHub Releases](https://github.com/blancofran/TTS-Tool-Src/releases):
+
+| Platform | File |
+| --- | --- |
+| macOS (Apple Silicon) | `TTS Tool_<version>_aarch64.dmg` |
+| Windows | `TTS Tool_<version>_x64-setup.exe` or `TTS Tool_<version>_x64_en-US.msi` |
+| Linux (Debian/Ubuntu) | `TTS Tool_<version>_amd64.deb` |
+| Linux (Fedora/openSUSE) | `TTS Tool-<version>-1.x86_64.rpm` |
+| Linux (any distro, needs FUSE2) | `TTS Tool_<version>_amd64.AppImage` |
+
+Releases are drafts until reviewed and published manually — check the
+[Releases page](https://github.com/blancofran/TTS-Tool-Src/releases) for the
+latest published version.
+
 ## Getting started
 
 ```bash
