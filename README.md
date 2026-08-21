@@ -16,19 +16,19 @@ no internet required for the core flow.
 
 ## Downloads
 
-Prebuilt installers are published as draft [GitHub Releases](https://github.com/blancofran/TTS-Tool-Src/releases):
+Latest release: **[v0.1.0](https://github.com/blancofran/TTS-Tool-Src/releases/tag/v0.1.0)**
 
 | Platform | File |
 | --- | --- |
-| macOS (Apple Silicon) | `TTS Tool_<version>_aarch64.dmg` |
-| Windows | `TTS Tool_<version>_x64-setup.exe` or `TTS Tool_<version>_x64_en-US.msi` |
-| Linux (Debian/Ubuntu) | `TTS Tool_<version>_amd64.deb` |
-| Linux (Fedora/openSUSE) | `TTS Tool-<version>-1.x86_64.rpm` |
-| Linux (any distro, needs FUSE2) | `TTS Tool_<version>_amd64.AppImage` |
+| macOS (Apple Silicon) | [`TTS Tool_0.1.0_aarch64.dmg`](https://github.com/blancofran/TTS-Tool-Src/releases/download/v0.1.0/TTS.Tool_0.1.0_aarch64.dmg) |
+| Windows | [`TTS Tool_0.1.0_x64-setup.exe`](https://github.com/blancofran/TTS-Tool-Src/releases/download/v0.1.0/TTS.Tool_0.1.0_x64-setup.exe) or [`.msi`](https://github.com/blancofran/TTS-Tool-Src/releases/download/v0.1.0/TTS.Tool_0.1.0_x64_en-US.msi) |
+| Linux (Debian/Ubuntu) | [`TTS Tool_0.1.0_amd64.deb`](https://github.com/blancofran/TTS-Tool-Src/releases/download/v0.1.0/TTS.Tool_0.1.0_amd64.deb) |
+| Linux (Fedora/openSUSE) | [`TTS Tool-0.1.0-1.x86_64.rpm`](https://github.com/blancofran/TTS-Tool-Src/releases/download/v0.1.0/TTS.Tool-0.1.0-1.x86_64.rpm) |
+| Linux (any distro, needs FUSE2) | [`TTS Tool_0.1.0_amd64.AppImage`](https://github.com/blancofran/TTS-Tool-Src/releases/download/v0.1.0/TTS.Tool_0.1.0_amd64.AppImage) |
 
-Releases are drafts until reviewed and published manually — check the
-[Releases page](https://github.com/blancofran/TTS-Tool-Src/releases) for the
-latest published version.
+All versions: [Releases page](https://github.com/blancofran/TTS-Tool-Src/releases).
+New builds land as **drafts** and are only public once reviewed and published
+manually.
 
 ## Getting started
 
