@@ -1,5 +1,7 @@
 # TTS Tool
 
+🇬🇧 English | [🇪🇸 Español](README.es.md)
+
 Desktop app (Tauri 2 + React/TypeScript + Rust) that transcribes audio/video
 files locally with Whisper (`whisper-rs` / whisper.cpp), no cloud backend and
 no internet required for the core flow.
