@@ -16,6 +16,19 @@ no internet required for the core flow.
 - **On-demand model**: `ggml-medium-q5_0.bin` (~539MB), downloaded into the
   app data dir the first time "Precisión alta" is used.
 
+## Supported file formats
+
+The file picker and drag-and-drop only accept these extensions
+([`DropZone.tsx`](src/components/DropZone.tsx)):
+
+- **Audio**: `mp3`, `wav`, `m4a`, `flac`, `ogg`
+- **Video**: `mp4`, `mkv`, `mov`, `avi`
+
+This is a UI-level allowlist, not a hard backend limit — audio extraction
+([`ffmpeg.rs`](src-tauri/src/audio/ffmpeg.rs)) hands the file straight to a
+real `ffmpeg` binary with no format validation, so it can actually decode
+anything ffmpeg supports.
+
 ## Downloads
 
 Latest release: **[v0.1.0](https://github.com/blancofran/TTS-Tool-Src/releases/tag/v0.1.0)**
